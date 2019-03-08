@@ -26,6 +26,25 @@
     </style>
 
 
+    <style name="edt_login">
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:paddingLeft">25dp</item>
+        <item name="android:textColorHint">@color/more_light_grey</item>
+        <item name="android:background">@drawable/shape_login_edt</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_width">280dp</item>
+        <item name="android:layout_height">45dp</item>
+    </style>
+
+    <style name="btn_login">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/bg_btn</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+
 
 
 

@@ -1,10 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".business.login.view.RegisterActivity">
+    android:background="@drawable/bg_login">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/tv_back"
+        android:layout_margin="10dp"
+        android:textColor="@color/dark_orange"
+        android:textSize="25dp"
+        android:text="返回"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ic_register_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/edt_phone"
+        style="@style/edt_login"
+        android:layout_marginTop="30dp"
+        android:hint="手机号"/>
+
+    <EditText
+        android:id="@+id/edt_register_psw"
+        style="@style/edt_login"
+        android:inputType="textPassword"
+        android:hint="密码"/>
+
+    <EditText
+        style="@style/edt_login"
+        android:hint="设备识别码"/>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <EditText
+            android:id="@+id/edt_verification_code"
+            android:hint="短信验证码"
+            android:paddingLeft="25dp"
+            android:textSize="20sp"
+            android:textColorHint="@color/more_light_grey"
+            android:background="@drawable/shape_login_edt"
+            android:layout_width="170dp"
+            android:layout_height="45dp"/>
+        <Button
+            android:background="@color/transparent"
+            android:text="点此发送"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textColor="@color/dark_orange"
+            android:layout_marginLeft="10dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <Button
+        android:text="注  册"
+        style="@style/btn_login"
+        android:layout_marginTop="40dp"
+        android:layout_width="180dp"
+        android:layout_height="50dp"/>
+</LinearLayout>

@@ -19,6 +19,8 @@
         </activity>
         <activity android:name=".business.login.view.RegisterActivity">
         </activity>
+        <activity android:name=".business.main.view.MainActivity">
+        </activity>
     </application>
 
 </manifest>

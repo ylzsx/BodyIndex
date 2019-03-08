@@ -15,6 +15,7 @@ import cn.fhypayaso.bodyIndex.base.annotation.RegisterPresenter;
 import cn.fhypayaso.bodyIndex.base.mvp.view.BasePresenterActivity;
 import cn.fhypayaso.bodyIndex.business.login.contract.LoginContract;
 import cn.fhypayaso.bodyIndex.business.login.presenter.LoginPresenter;
+import cn.fhypayaso.bodyIndex.business.main.view.MainActivity;
 
 @ContentView(R.layout.activity_login)
 @RegisterPresenter(LoginPresenter.class)
@@ -43,6 +44,8 @@ public class LoginActivity extends BasePresenterActivity<LoginContract.Presenter
     public void clickView(View view) {
         switch (view.getId()) {
             case R.id.btn_login:
+                startActivity(MainActivity.class);
+                finish();
                 break;
             case R.id.tv_register:
                 startActivity(RegisterActivity.class);

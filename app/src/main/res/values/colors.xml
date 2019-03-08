@@ -7,12 +7,28 @@
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
 
+    <!--Login/Register-->
     <color name="transparent">#00000000</color>
     <color name="dark_orange">#D19945</color>
     <color name="orange">#FBB03B</color>
     <color name="yellow">#FCEE21</color>
     <color name="grey">#BBBBBB</color>
     <color name="more_light_grey">#d6d3d3</color>
+
+    <!--main-->
+    <color name="main_dark_blue">#0071BC</color>
+    <color name="main_light_blue">#29ABE2</color>
+    <color name="main_dark_red">#AA272D</color>
+    <color name="main_light_yellow">#F1EDAF</color>
+    <color name="main_dark_green">#004C20</color>
+
+    <color name="main_heart_normal">#F1EDAF</color>
+    <color name="main_heart_low">#00FFFF</color>
+    <color name="main_heart_height">#FFFF00</color>
+
+    <color name="main_temperature_normal">#F1EDAF</color>
+    <color name="main_temperature_low">#00FFFF</color>
+    <color name="main_temperature_height">#FF0000</color>
 
 
 </resources>

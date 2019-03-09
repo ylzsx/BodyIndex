@@ -44,7 +44,16 @@
         <item name="android:layout_gravity">center</item>
     </style>
 
-
+    <!-- 设置无ActionBar-->
+    <style name="HeartDetailTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <!--应用的主要色调，actionBar默认使用该颜色，Toolbar导航栏的底色-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!--应用的主要暗色调，statusBarColor默认使用该颜色-->
+        <item name="colorPrimaryDark">@color/heart_detail_red</item>
+        <!--控件选中后的颜色-->
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
 
 
 

@@ -30,5 +30,8 @@
     <color name="main_temperature_low">#00FFFF</color>
     <color name="main_temperature_height">#FF0000</color>
 
+    <!--details-->
+    <color name="heart_detail_red">#E24A46</color>
+
 
 </resources>

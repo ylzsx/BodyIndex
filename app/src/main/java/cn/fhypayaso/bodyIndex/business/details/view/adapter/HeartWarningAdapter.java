@@ -10,12 +10,12 @@ import android.widget.TextView;
 import java.util.List;
 
 import cn.fhypayaso.bodyIndex.R;
-import cn.fhypayaso.bodyIndex.business.details.model.response.HeartWarningResponseModel;
+import cn.fhypayaso.bodyIndex.business.details.model.response.WarningResponseModel;
 
 public class HeartWarningAdapter extends RecyclerView.Adapter<HeartWarningAdapter.ViewHolder> {
 
     private Context mContext;
-    private List<HeartWarningResponseModel> mHeartWarningList;
+    private List<WarningResponseModel> mHeartWarningList;
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         TextView heartMessage;
@@ -28,7 +28,7 @@ public class HeartWarningAdapter extends RecyclerView.Adapter<HeartWarningAdapte
         }
     }
 
-    public HeartWarningAdapter(List<HeartWarningResponseModel> heartWarningList) {
+    public HeartWarningAdapter(List<WarningResponseModel> heartWarningList) {
         mHeartWarningList = heartWarningList;
     }
 
@@ -44,7 +44,7 @@ public class HeartWarningAdapter extends RecyclerView.Adapter<HeartWarningAdapte
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        HeartWarningResponseModel heartWarning = mHeartWarningList.get(position);
+        WarningResponseModel heartWarning = mHeartWarningList.get(position);
         holder.heartMessage.setText(heartWarning.getMessage());
         holder.heartTime.setText(heartWarning.getTime());
     }

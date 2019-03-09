@@ -1,6 +1,6 @@
 package cn.fhypayaso.bodyIndex.business.details.model.response;
 
-public class HeartWarningResponseModel {
+public class WarningResponseModel {
 
     /**
      * message : 心率过快
@@ -10,7 +10,7 @@ public class HeartWarningResponseModel {
     private String message;
     private String time;
 
-    public HeartWarningResponseModel(String message, String time) {
+    public WarningResponseModel(String message, String time) {
         this.message = message;
         this.time = time;
     }

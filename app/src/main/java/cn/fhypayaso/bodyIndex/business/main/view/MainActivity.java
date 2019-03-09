@@ -13,6 +13,7 @@ import cn.fhypayaso.bodyIndex.base.annotation.ContentView;
 import cn.fhypayaso.bodyIndex.base.annotation.RegisterPresenter;
 import cn.fhypayaso.bodyIndex.base.mvp.view.BasePresenterActivity;
 import cn.fhypayaso.bodyIndex.business.details.view.activity.HeartDetailActivity;
+import cn.fhypayaso.bodyIndex.business.details.view.activity.TemperatureDetailActivity;
 import cn.fhypayaso.bodyIndex.business.login.view.LoginActivity;
 import cn.fhypayaso.bodyIndex.business.main.contract.MainContract;
 import cn.fhypayaso.bodyIndex.business.main.presenter.MainPresenter;
@@ -46,7 +47,7 @@ public class MainActivity extends BasePresenterActivity<MainContract.Presenter> 
 
     }
 
-    @OnClick({R.id.tv_logout,R.id.img_heart_detail})
+    @OnClick({R.id.tv_logout,R.id.img_heart_detail,R.id.img_temperature_detail})
     public void clickView(View view) {
         switch (view.getId()) {
             case R.id.tv_logout:
@@ -55,6 +56,9 @@ public class MainActivity extends BasePresenterActivity<MainContract.Presenter> 
                 break;
             case R.id.img_heart_detail:
                 startActivity(HeartDetailActivity.class);
+                break;
+            case R.id.img_temperature_detail:
+                startActivity(TemperatureDetailActivity.class);
                 break;
             default:
                 break;

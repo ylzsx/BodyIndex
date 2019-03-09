@@ -27,14 +27,15 @@ import cn.fhypayaso.bodyIndex.R;
 import cn.fhypayaso.bodyIndex.base.annotation.ContentView;
 import cn.fhypayaso.bodyIndex.base.annotation.RegisterPresenter;
 import cn.fhypayaso.bodyIndex.base.mvp.view.BasePresenterActivity;
-import cn.fhypayaso.bodyIndex.business.details.contract.HeartDetailContract;
+import cn.fhypayaso.bodyIndex.business.details.contract.TemperatureDetailContarct;
 import cn.fhypayaso.bodyIndex.business.details.model.response.WarningResponseModel;
-import cn.fhypayaso.bodyIndex.business.details.presenter.HeartDetailPresenter;
+import cn.fhypayaso.bodyIndex.business.details.presenter.TemperatureDetailPresenter;
 import cn.fhypayaso.bodyIndex.business.details.view.adapter.HeartWarningAdapter;
 
-@ContentView(R.layout.activity_heart_detail)
-@RegisterPresenter(HeartDetailPresenter.class)
-public class HeartDetailActivity extends BasePresenterActivity<HeartDetailContract.Presenter> implements HeartDetailContract.View {
+@ContentView(R.layout.activity_temperature_detail)
+@RegisterPresenter(TemperatureDetailPresenter.class)
+public class TemperatureDetailActivity extends BasePresenterActivity<TemperatureDetailContarct.Presenter> implements TemperatureDetailContarct.View {
+
 
     @BindView(R.id.img_back)
     ImageView mImgBack;
@@ -47,7 +48,7 @@ public class HeartDetailActivity extends BasePresenterActivity<HeartDetailContra
     @BindView(R.id.rcView_heart)
     RecyclerView mRcViewHeart;
 
-    private List<WarningResponseModel> mHeartWarningList = new ArrayList<>();
+    private List<WarningResponseModel> mTemperatureWarningList = new ArrayList<>();
     private HeartWarningAdapter adapter;
     // dataSets的个数便是曲线的条数
     ArrayList<ILineDataSet> dataSets = new ArrayList<>();
@@ -61,11 +62,11 @@ public class HeartDetailActivity extends BasePresenterActivity<HeartDetailContra
     protected void initView() {
 
         // 初始化RecyclerView
-        mPresenter.initHeartWarningList();
+        mPresenter.initTemperatureWarningList();
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         mRcViewHeart.setLayoutManager(linearLayoutManager);
 
-        adapter = new HeartWarningAdapter(mHeartWarningList);
+        adapter = new HeartWarningAdapter(mTemperatureWarningList);
         mRcViewHeart.setAdapter(adapter);
 
         // 初始化 LineChart
@@ -123,15 +124,15 @@ public class HeartDetailActivity extends BasePresenterActivity<HeartDetailContra
     }
 
     /**
-     * 初始化心率警告列表成功与失败回调
+     * 初始化体温警告列表成功与失败回调
      */
     @Override
-    public void initHeartWarningListSuccess(List<WarningResponseModel> heartWarningList) {
-        mHeartWarningList = heartWarningList;
+    public void initTemperatureWarningListSuccess(List<WarningResponseModel> temperatureWarningList) {
+        mTemperatureWarningList = temperatureWarningList;
     }
 
     @Override
-    public void initHeartWarningListFailed() {
+    public void initTemperatureWarningListFailed() {
 
     }
 
@@ -157,14 +158,14 @@ public class HeartDetailActivity extends BasePresenterActivity<HeartDetailContra
             mLinechart.getData().notifyDataChanged();
             mLinechart.notifyDataSetChanged();
         } else {
-            set = new LineDataSet(values, "心率曲线");
+            set = new LineDataSet(values, "体温曲线");
             set.setMode(LineDataSet.Mode.CUBIC_BEZIER);
-            set.setColor(Color.parseColor("#E24A46"));
-            set.setCircleColor(Color.parseColor("#E24A46"));
+            set.setColor(Color.parseColor("#88A80D"));
+            set.setCircleColor(Color.parseColor("#88A80D"));
             set.setHighLightColor(Color.WHITE);//设置点击交点后显示高亮线的颜色
 //            set.setHighlightEnabled(true);//是否使用点击高亮线
             set.setDrawCircles(true);
-            set.setValueTextColor(Color.parseColor("#E24A46"));
+            set.setValueTextColor(Color.parseColor("#88A80D"));
             set.setLineWidth(2f);//设置线宽
             set.setCircleRadius(3f);//设置焦点圆心的大小
             set.setHighlightLineWidth(1f);//设置点击交点后显示高亮线宽
@@ -180,5 +181,4 @@ public class HeartDetailActivity extends BasePresenterActivity<HeartDetailContra
     public void initChartDataFailed() {
 
     }
-
 }

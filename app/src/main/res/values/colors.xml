@@ -32,6 +32,7 @@
 
     <!--details-->
     <color name="heart_detail_red">#E24A46</color>
+    <color name="temperature_detail_green">#88A80D</color>
 
 
 </resources>

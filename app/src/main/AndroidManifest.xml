@@ -25,10 +25,13 @@
             android:name=".business.details.view.activity.HeartDetailActivity"
             android:theme="@style/HeartDetailTheme">
         </activity>
-        <activity android:name=".business.details.view.activity.TemperatureDetailActivity"
+        <activity
+            android:name=".business.details.view.activity.TemperatureDetailActivity"
             android:theme="@style/TemperatureDetailTheme">
         </activity>
         <activity android:name=".business.login.view.RetrievePasswordActivity">
+        </activity>
+        <activity android:name=".business.login.view.ChangePasswordActivity">
         </activity>
     </application>
 

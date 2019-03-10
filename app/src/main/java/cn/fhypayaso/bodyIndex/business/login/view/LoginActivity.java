@@ -29,6 +29,8 @@ public class LoginActivity extends BasePresenterActivity<LoginContract.Presenter
     Button mBtnLogin;
     @BindView(R.id.tv_register)
     TextView mTvRegister;
+    @BindView(R.id.tv_retrieve_password)
+    TextView mTvRetrievePassword;
 
     @Override
     protected void initData(Bundle savedInstanceState) {
@@ -40,7 +42,7 @@ public class LoginActivity extends BasePresenterActivity<LoginContract.Presenter
         setImmersiveStatusBar(true);
     }
 
-    @OnClick({R.id.btn_login,R.id.tv_register})
+    @OnClick({R.id.btn_login, R.id.tv_register,R.id.tv_retrieve_password})
     public void clickView(View view) {
         switch (view.getId()) {
             case R.id.btn_login:
@@ -49,6 +51,9 @@ public class LoginActivity extends BasePresenterActivity<LoginContract.Presenter
                 break;
             case R.id.tv_register:
                 startActivity(RegisterActivity.class);
+                break;
+            case R.id.tv_retrieve_password:
+                startActivity(RetrievePasswordActivity.class);
                 break;
             default:
                 break;

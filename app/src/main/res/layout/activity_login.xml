@@ -34,12 +34,28 @@
         android:layout_width="180dp"
         android:layout_height="50dp"/>
 
-    <TextView
-        android:id="@+id/tv_register"
-        android:layout_marginTop="130dp"
+    <LinearLayout
         android:layout_gravity="center"
-        android:textColor="@color/orange"
-        android:text="没有账户？点此注册"
+        android:layout_marginTop="130dp"
+        android:orientation="horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_register"
+            android:layout_gravity="center"
+            android:textColor="@color/orange"
+            android:text="没有账户？点此注册"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_retrieve_password"
+            android:layout_marginLeft="50dp"
+            android:layout_gravity="center"
+            android:textColor="@color/orange"
+            android:text="找回密码"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
 </LinearLayout>

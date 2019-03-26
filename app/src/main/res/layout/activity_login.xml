@@ -16,6 +16,7 @@
 
     <EditText
         android:id="@+id/edt_account"
+        android:inputType="number"
         style="@style/edt_login"
         android:layout_marginTop="30dp"
         android:hint="用户名" />

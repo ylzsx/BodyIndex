@@ -18,7 +18,7 @@ public class Config {
     /**
      * 网络请求BaseURL
      */
-    public static final String APP_SERVER_BASE_URL = "";
+    public static final String APP_SERVER_BASE_URL = "http://www.even1f.cn/health/";
 
 
     /**
@@ -36,6 +36,6 @@ public class Config {
     /**
      * 正确返回码
      */
-    public static final int[] NET_CORRECT_CODE = {1000};
+    public static final int[] NET_CORRECT_CODE = {0};
 
 }

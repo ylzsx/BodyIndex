@@ -14,8 +14,12 @@ import cn.fhypayaso.bodyIndex.base.annotation.ContentView;
 import cn.fhypayaso.bodyIndex.base.annotation.RegisterPresenter;
 import cn.fhypayaso.bodyIndex.base.mvp.view.BasePresenterActivity;
 import cn.fhypayaso.bodyIndex.business.login.contract.LoginContract;
+import cn.fhypayaso.bodyIndex.business.login.modal.request.LoginRequestModal;
 import cn.fhypayaso.bodyIndex.business.login.presenter.LoginPresenter;
 import cn.fhypayaso.bodyIndex.business.main.view.MainActivity;
+import cn.fhypayaso.bodyIndex.common.CacheKey;
+import cn.fhypayaso.bodyIndex.utils.CacheUtil;
+import cn.fhypayaso.bodyIndex.utils.ToastUtil;
 
 @ContentView(R.layout.activity_login)
 @RegisterPresenter(LoginPresenter.class)
@@ -40,14 +44,25 @@ public class LoginActivity extends BasePresenterActivity<LoginContract.Presenter
     @Override
     protected void initView() {
         setImmersiveStatusBar(true);
+
+        /**
+         * 验证token是否为空，开启服务器取消注释
+         */
+        String token= CacheUtil.getSP().getString(CacheKey.TOKEN,"");
+        if (!"".equals(token)){
+            startActivity(MainActivity.class);
+            finish();
+        }
     }
 
     @OnClick({R.id.btn_login, R.id.tv_register,R.id.tv_retrieve_password})
     public void clickView(View view) {
         switch (view.getId()) {
             case R.id.btn_login:
-                startActivity(MainActivity.class);
-                finish();
+                String account = mEdtAccount.getText().toString();
+                String passward = mEdtPassword.getText().toString();
+                showProgressDialog();
+                mPresenter.login(new LoginRequestModal(account,passward));
                 break;
             case R.id.tv_register:
                 startActivity(RegisterActivity.class);
@@ -65,5 +80,23 @@ public class LoginActivity extends BasePresenterActivity<LoginContract.Presenter
         super.onCreate(savedInstanceState);
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
+    }
+
+    /**
+     * 登录成功与失败回调
+     * @param s
+     */
+    @Override
+    public void loginSuccess(String s) {
+        dismissProgressDialog();
+        ToastUtil.showToast("登录成功");
+        startActivity(MainActivity.class);
+        finish();
+    }
+
+    @Override
+    public void loginFailed() {
+        dismissProgressDialog();
+        ToastUtil.showToast("登录失败");
     }
 }
